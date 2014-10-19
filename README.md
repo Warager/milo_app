@@ -8,8 +8,8 @@ Installation instructions:
 
  c. pip install requirements.txt
 
- d. python manage.py syncdb and/or migrate
+ d. python manage.py syncdb
 
  e. python manage.py runserver
 
- f. welcome
+ f. http://localhost:8000/
