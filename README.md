@@ -2,7 +2,7 @@ milo_app
 ========
 Installation instructions:
 
- a. git clone from github
+ a. git clone from github (https://github.com/Warager/milo_app.git)
 
  b. create a virtualenv
 
