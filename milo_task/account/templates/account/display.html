@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load account_extras %}
+{% block content %}
+    <table class="table table-striped"
+         data-role="table">
+    <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Data</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Username</td>
+        <td>{{ user.username }}</td>
+      </tr>
+      <tr>
+        <td>Birthday</td>
+        <td>{{ user.birthday }}</td>
+      </tr>
+      <tr>
+        <td>Eligible</td>
+        <td>{{ user.birthday|eligible }} </td>
+      </tr>
+      <tr>
+        <td>Random</td>
+        <td>{{ user.random}}</td>
+      </tr>
+      <tr>
+        <td>BizzFuzz</td>
+        <td>{{ user.random|bizzfuzz }}</td>
+      </tr>
+
+      <tr>
+        <td>
+          <a href="/" class="btn btn-default btn-sm">Back to users list</a>
+        </td>
+        <td>
+          <a href="/edit/{{ user.id }}" class="btn btn-warning
+          btn-sm">Edit user's data</a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+{% endblock %}

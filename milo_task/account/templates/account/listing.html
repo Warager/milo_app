@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load account_extras %}
+{% block content %}
+    <table class="table table-striped"
+         data-role="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Birthday</th>
+      <th>Eligible</th>
+      <th>Random</th>
+      <th>BizzFuzz</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.birthday }}</td>
+        <td>{{ user.birthday|eligible }}</td>
+        <td>{{ user.random}}</td>
+        <td>{{ user.random|bizzfuzz }}</td>
+        <td>
+          <a href="/view/{{ user.id }}" class="btn btn-success btn-sm">View
+            user's data</a>
+          <a href="/delete/{{ user.id }}" class="btn btn-danger btn-sm">
+            Delete user</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <a href="/create" class="btn btn-default btn-sm">Create new user</a>
+  <br>
+  <br>
+  <a href = "/export_csv" class="btn btn-info btn-sm">Export users to csv</a>
+{% endblock %}
